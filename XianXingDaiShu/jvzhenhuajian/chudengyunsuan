@@ -1,0 +1,48 @@
+def duidiaolie(jvzhen,i,j): #对调矩阵i,j两列
+    i=i-1
+    j=j-1
+    linshibianliang=[0 for i in range(len(jvzhen))]
+    for a in range(len(jvzhen)):
+        linshibianliang[a]=jvzhen[a][j]
+    for a in range(len(jvzhen)):
+        jvzhen[a][j]=jvzhen[a][i]
+    for a in range(len(jvzhen)):
+        jvzhen[a][i]=linshibianliang[a]
+    return jvzhen
+
+def duidiaohang(jvzhen,i,j):    #对调矩阵i，j两行
+    i=i-1
+    j=j-1
+    linshibianliang=jvzhen[j]
+    jvzhen[j]=jvzhen[i]
+    jvzhen[i]=linshibianliang
+    return jvzhen
+
+def chengshulie(jvzhen,k,i):    #@对矩阵第i列乘 k
+    i=i-1
+    for j in range(len(jvzhen)):
+        jvzhen[j][i]=k * jvzhen[j][i]
+    return jvzhen
+
+def chengshuhang(jvzhen,k,i):    #对矩阵第i行乘 k
+    i=i-1
+    for j in range(len(jvzhen[0])) :
+        jvzhen[i][j]=jvzhen[i][j] * k
+    return jvzhen
+
+def chenglie(jvzhen,i,j,k):     #将第i列乘k 再加到第j列
+    i=i-1
+    j=j-1
+    for a in range(len(jvzhen)):
+        jvzhen[a][j]=jvzhen[a][j] + jvzhen[a][i] * k
+    return jvzhen
+
+def chenghang(jvzhen,i,j,k):       #将第i行乘k 再加到第j行
+    i=i-1
+    j=j-1
+    for a in range(len(jvzhen[0])):
+        jvzhen[j][a]=jvzhen[j][a] + jvzhen[i][a] * k
+    return jvzhen
+
+
+
